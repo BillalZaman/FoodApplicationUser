@@ -1,19 +1,22 @@
 package com.infotech4it.cibo.models;
 
 public class MenuListModel {
-    private int itemImage;
+    private String itemImage;
     private String itemName;
 
-    public MenuListModel(int itemImage, String itemName) {
+    public MenuListModel() {
+    }
+
+    public MenuListModel(String itemImage, String itemName) {
         this.itemImage = itemImage;
         this.itemName = itemName;
     }
 
-    public int getItemImage() {
+    public String getItemImage() {
         return itemImage;
     }
 
-    public void setItemImage(int itemImage) {
+    public void setItemImage(String itemImage) {
         this.itemImage = itemImage;
     }
 

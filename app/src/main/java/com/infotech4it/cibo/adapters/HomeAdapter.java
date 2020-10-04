@@ -1,6 +1,5 @@
 package com.infotech4it.cibo.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.infotech4it.cibo.R;
-import com.infotech4it.cibo.activities.MenuListActivity;
 import com.infotech4it.cibo.databinding.ItemListMenuBinding;
-import com.infotech4it.cibo.helpers.UIHelper;
+import com.infotech4it.cibo.interfaces.HomeInterface;
 import com.infotech4it.cibo.models.HomeModel;
 
 import java.util.ArrayList;
@@ -29,7 +27,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         this.context = context;
     }
 
-    public void setData(ArrayList<HomeModel> data){
+    public void setData(ArrayList<HomeModel> data) {
         this.data = data;
         notifyDataSetChanged();
     }
@@ -43,7 +41,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.binding.setOnHomeModel(data.get(position));
 
         Glide.with(context).load(data.get(position).getImage()).into(holder.binding.imageView3);
@@ -51,7 +49,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         holder.binding.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UIHelper.openActivity((Activity) context, MenuListActivity.class);
+                HomeInterface homeInterface = (HomeInterface) context;
+                homeInterface.dashboardClick(position);
+//                UIHelper.openActivity((Activity) context, MenuListActivity.class);
             }
         });
     }
@@ -61,7 +61,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         return data.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ItemListMenuBinding binding;
 
         public ViewHolder(@NonNull ItemListMenuBinding itemView) {

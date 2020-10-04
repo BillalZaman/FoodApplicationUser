@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.infotech4it.cibo.R;
 import com.infotech4it.cibo.activities.MenuAddItemActivity;
 import com.infotech4it.cibo.databinding.ItemListMenuListBinding;
@@ -44,6 +45,7 @@ public class MenuItemListAdapter extends RecyclerView.Adapter<MenuItemListAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.binding.setOnMenuitem(data.get(position));
+        Glide.with(context).load(data.get(position).getItemImage()).into(holder.binding.imageView5);
         holder.binding.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

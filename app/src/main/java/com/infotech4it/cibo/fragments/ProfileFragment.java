@@ -44,15 +44,13 @@ public class ProfileFragment extends Fragment {
     }
 
     private void loadUserProfile(final String userId) {
-        databaseReference = FirebaseDatabase.getInstance().getReference().child(userId);
+        databaseReference = FirebaseDatabase.getInstance().getReference(userId).child(FirebaseAuth.getInstance().getUid());
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot restSnapShot : dataSnapshot.getChildren()) {
                     UserModel userModel = restSnapShot.getValue(UserModel.class);
-                    binding.edtName.setText(userModel.getName());
-
-//                    binding.setOnUserModel(userModel);
+                    binding.setOnUserModel(userModel);
                 }
             }
 

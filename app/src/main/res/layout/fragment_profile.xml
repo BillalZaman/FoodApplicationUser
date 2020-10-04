@@ -94,6 +94,7 @@
                     android:inputType="textPersonName"
                     android:paddingStart="12dp"
                     android:paddingLeft="18dp"
+                    android:text="@{onUserModel.name}"
                     android:textColorHint="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.062"

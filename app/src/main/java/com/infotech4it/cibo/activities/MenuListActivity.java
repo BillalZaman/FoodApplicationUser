@@ -29,7 +29,7 @@ public class MenuListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_menu_list);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_menu_list);
 
         init();
     }
@@ -41,9 +41,26 @@ public class MenuListActivity extends AppCompatActivity {
                 finish();
             }
         });
-
         adapter = new MenuItemListAdapter(this);
-        loadData("pizzaList");
+
+        Bundle bundle = getIntent().getExtras();
+        String itemName = bundle.getString("dashboard");
+
+        if (itemName.equalsIgnoreCase("pizza")) {
+            loadData("pizzaList");
+        } else if (itemName.equalsIgnoreCase("burger")) {
+            loadData("pizzaList");
+        } else if (itemName.equalsIgnoreCase("Sandwitch")) {
+            loadData("pizzaList");
+        } else if (itemName.equalsIgnoreCase("Wrap")) {
+            loadData("pizzaList");
+        } else if (itemName.equalsIgnoreCase("Pasta")) {
+            loadData("pizzaList");
+        } else if (itemName.equalsIgnoreCase("Shawarma")) {
+            loadData("pizzaList");
+        } else if (itemName.equalsIgnoreCase("Fries")) {
+            loadData("pizzaList");
+        }
     }
 
     private void loadData(String listName) {
