@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "224725422228",
+    "firebase_url": "https://cibo-9dcc0.firebaseio.com",
+    "project_id": "cibo-9dcc0",
+    "storage_bucket": "cibo-9dcc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224725422228:android:85d6ea9e6f5bc07fb8e481",
+        "android_client_info": {
+          "package_name": "com.infotech4it.cibo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224725422228-r0542tsi0ha642pl4bgdg5gggi4ebrro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAjGyqkBbaJLgaeXGhdOBD3uhQhuGmo5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224725422228-r0542tsi0ha642pl4bgdg5gggi4ebrro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

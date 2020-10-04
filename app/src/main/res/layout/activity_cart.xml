@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="onClick"
+            type="com.infotech4it.cibo.activities.CartActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.CartActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:background="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="5dp"
+                android:onClick="@{(view)->onClick.onClick(view)}"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="Cart"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/btnCheckout"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Checkout"
+            android:background="@color/red"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="@dimen/textlarge"
+            android:onClick="@{(view)->onClick.onClick(view)}"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnCheckout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_list_cart" />
+
+                <EditText
+                    android:id="@+id/edtDiscount"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/edit_field"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center|start"
+                    android:inputType="textPersonName"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="Enter Promo Code"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnDiscount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerview" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Total"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/edtDiscount"
+                    app:layout_constraintTop_toBottomOf="@+id/edtDiscount" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="start|center"
+                    android:text="Total Price:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView19"
+                    app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="start|center"
+                    android:text="Discount"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView20"
+                    app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="start|center"
+                    android:text="Total Price after Discount:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView21"
+                    app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+                <TextView
+                    android:id="@+id/txtDiscountPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginRight="18dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="end|center"
+                    android:text="200 PKR"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView20"
+                    app:layout_constraintTop_toTopOf="@+id/textView20" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="end|center"
+                    android:text="100 PKR"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView21"
+                    app:layout_constraintEnd_toEndOf="@+id/txtDiscountPrice"
+                    app:layout_constraintStart_toStartOf="@+id/txtDiscountPrice"
+                    app:layout_constraintTop_toTopOf="@+id/textView21" />
+
+                <TextView
+                    android:id="@+id/txtDiscFinalPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="end|center"
+                    android:text="100 PKR"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView22"
+                    app:layout_constraintEnd_toEndOf="@+id/textView23"
+                    app:layout_constraintStart_toStartOf="@+id/txtDiscountPrice"
+                    app:layout_constraintTop_toTopOf="@+id/textView22" />
+
+
+                <TextView
+                    android:id="@+id/btnDiscount"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/red"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:text="Discount"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:onClick="@{(view)->onClick.onClick(view)}"
+                    app:layout_constraintBottom_toBottomOf="@+id/edtDiscount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/edtDiscount"
+                    app:layout_constraintTop_toTopOf="@+id/edtDiscount" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/checkout_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:onClick="@{null}"
+            android:elevation="12dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Checkout"
+                android:textAlignment="center"
+                android:textColor="@color/red"
+                android:textSize="@dimen/textextra_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/btnCashOnDelivery"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/red"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:text="Cash On Delievery"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textlarge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView7" />
+
+            <TextView
+                android:id="@+id/btnPickup"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="80dp"
+                android:background="@color/red"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:text="Pickup"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textlarge"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnCashOnDelivery" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

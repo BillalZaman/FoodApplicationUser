@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="onClick"
+            type="com.infotech4it.cibo.activities.ThankyouActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/thank_you_bg"
+        tools:context=".activities.ThankyouActivity">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:text="Thankyou For Choosing us"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.37" />
+
+        <TextView
+            android:id="@+id/btnOrderTrack"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@color/red"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:text="Order Track"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:onClick="@{(view)->onClick.onClick(view)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtOrderNumber" />
+
+        <TextView
+            android:id="@+id/btnHome"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:text="Home"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:onClick="@{(view)->onClick.onClick(view)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnOrderTrack" />
+
+        <TextView
+            android:id="@+id/txtOrderNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Order Number #23222"
+            android:textColor="@color/black_ligh"
+            android:textSize="@dimen/textlarge"
+            android:onClick="@{(view)->onClick.onClick(view)}"
+            app:layout_constraintEnd_toEndOf="@+id/textView8"
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

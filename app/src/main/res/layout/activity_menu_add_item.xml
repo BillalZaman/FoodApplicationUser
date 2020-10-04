@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="onMenuDetailClick"
+            type="com.infotech4it.cibo.activities.MenuAddItemActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/thank_you_bg"
+        tools:context=".activities.MenuAddItemActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:background="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="5dp"
+                android:onClick="@{(view)->onMenuDetailClick.onClick(view)}"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="Menu"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imgCart"
+                app:layout_constraintStart_toEndOf="@+id/imgBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:padding="5dp"
+                android:onClick="@{(view)->onMenuDetailClick.onClick(view)}"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView"
+                android:src="@drawable/ic_baseline_shopping_cart_24" />
+
+            <TextView
+                android:id="@+id/txtCart"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/circle_image"
+                android:gravity="center"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/imgCart"
+                app:layout_constraintEnd_toEndOf="@+id/imgCart"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintStart_toEndOf="@+id/imgCart"
+                app:layout_constraintTop_toTopOf="@+id/imgCart"
+                app:layout_constraintVertical_bias="0.01999998" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:id="@+id/mainScroller"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/edtNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/inner_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/imgItem"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/home_product_image" />
+
+                <TextView
+                    android:id="@+id/txtItemName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center|start"
+                    android:text="Chicken Fajita"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@+id/txtAddress"
+                    app:layout_constraintStart_toStartOf="@+id/imgItem"
+                    app:layout_constraintTop_toBottomOf="@+id/imgItem"
+                    android:layout_marginRight="8dp" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content."
+                    android:textColor="@color/black_ligh"
+                    android:textSize="@dimen/textsmall"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtItemName" />
+
+                <TextView
+                    android:id="@+id/txtAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:text="1050 PKR"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtItemName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtItemName" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/grey_vlight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/variations"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/textlarge"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/view3"
+                    app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/one_var"
+                    android:textColor="@color/black_ligh"
+                    android:textSize="@dimen/extrasmall"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView9"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupVariation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView10"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+                    <RadioButton
+                        android:id="@+id/radioVa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="RadioButton" />
+                </RadioGroup>
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/grey_vlight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroupVariation" />
+
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/variations"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/textlarge"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/view3"
+                    app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/one_var"
+                    android:textColor="@color/black_ligh"
+                    android:textSize="@dimen/extrasmall"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView9"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupFries"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView10"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12">
+
+                    <RadioButton
+                        android:id="@+id/radioRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="RadioButton" />
+                </RadioGroup>
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/grey_vlight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroupFries" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Special Instruction"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textlarge"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/view3"
+                    app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Please let us know if you are allergic to anything or if we need to avoid something"
+                    android:textColor="@color/black_ligh"
+                    android:textSize="@dimen/extrasmall"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView9"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+                <MultiAutoCompleteTextView
+                    android:id="@+id/edtExtraNote"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_field"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="start|top"
+                    android:hint="e.g No mayo"
+                    android:inputType="textPersonName"
+                    android:paddingStart="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"
+                    android:textSize="@dimen/textsmall"
+                    app:layout_constraintEnd_toEndOf="@+id/textView14"
+                    app:layout_constraintStart_toStartOf="@+id/textView14"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="If this product is not available"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/textlarge"
+                    app:layout_constraintEnd_toEndOf="@+id/edtExtraNote"
+                    app:layout_constraintStart_toStartOf="@+id/edtExtraNote"
+                    app:layout_constraintTop_toBottomOf="@+id/edtExtraNote" />
+
+                <TextView
+                    android:id="@+id/txtRemoveOrder"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edit_field"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                    android:drawableRight="@drawable/ic_baseline_arrow_right_24"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="start|center"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp"
+                    android:text="Remove it from my order"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsmall"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView14"
+                    app:layout_constraintStart_toStartOf="@+id/textView14"
+                    app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <EditText
+            android:id="@+id/edtNumber"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edit_field"
+            android:ems="10"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center|start"
+            android:hint="Enter the quantity"
+            android:inputType="number"
+            android:paddingStart="8dp"
+            android:paddingLeft="8dp"
+            android:textSize="@dimen/textsmall"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/btnAddCart"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/add_to_cart"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="@dimen/textsmall"
+            android:textColor="@color/white"
+            android:background="@color/red"
+            android:onClick="@{(view)->onMenuDetailClick.onClick(view)}"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintBottom_toBottomOf="@+id/edtNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edtNumber"
+            app:layout_constraintTop_toTopOf="@+id/edtNumber" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

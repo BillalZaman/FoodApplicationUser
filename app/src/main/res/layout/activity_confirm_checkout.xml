@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="onClick"
+            type="com.infotech4it.cibo.activities.ConfirmCheckoutActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.ConfirmCheckoutActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:background="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="5dp"
+                android:onClick="@{(view)->onClick.onClick(view)}"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="Comfirm Order"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/btnCheckout"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:text="Confirm Order"
+            android:background="@color/red"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="18sp"
+            android:onClick="@{(view)->onClick.onClick(view)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ScrollView
+            android:id="@+id/mainScroller"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnCheckout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="Name:"
+                    android:textColor="@color/black_ligh"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/txtName"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/edit_field"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center|start"
+                    android:paddingStart="12dp"
+                    android:paddingLeft="12dp"
+                    android:text="BilalZaman"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+                <TextView
+                    android:id="@+id/textView38"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="Contact us:"
+                    android:textColor="@color/black_ligh"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+                <EditText
+                    android:id="@+id/txtPhoneNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/edit_field"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center|start"
+                    android:paddingStart="12dp"
+                    android:paddingLeft="12dp"
+                    android:text="+92 322 467 1519"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+                <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Address:"
+                    android:textColor="@color/black_ligh"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtPhoneNumber" />
+
+                <EditText
+                    android:id="@+id/txtAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:minHeight="35dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/edit_field"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center|start"
+                    android:paddingStart="12dp"
+                    android:paddingLeft="12dp"
+                    android:text="2nd Floor, Zainab Plaza, 159 D.H.A. Main Blvd, Iqbal Park, Lahore, Punjab"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+                <TextView
+                    android:id="@+id/textView34"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Total Price:"
+                    android:textColor="@color/black_ligh"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+
+                <EditText
+                    android:id="@+id/txtPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center|start"
+                    android:text="500 PKR"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:paddingStart="12dp"
+                    android:paddingLeft="12dp"
+                    android:background="@drawable/edit_field"
+                    app:layout_constraintEnd_toEndOf="@+id/txtAddress"
+                    app:layout_constraintStart_toStartOf="@+id/txtAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+                <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="Discount Price:"
+                    android:textColor="@color/black_ligh"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
+
+                <EditText
+                    android:id="@+id/txtDiscountPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center|start"
+                    android:text="100 PKR"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:paddingStart="12dp"
+                    android:paddingLeft="12dp"
+                    android:background="@drawable/edit_field"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPrice"
+                    app:layout_constraintStart_toStartOf="@+id/txtPrice"
+                    app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+                <TextView
+                    android:id="@+id/textView36"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="Total Price After Discount:"
+                    android:textColor="@color/black_ligh"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDiscountPrice" />
+
+                <EditText
+                    android:id="@+id/txtTotalPriceDiscount"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center|start"
+                    android:text="400 PKR"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:paddingStart="12dp"
+                    android:paddingLeft="12dp"
+                    android:background="@drawable/edit_field"
+                    app:layout_constraintEnd_toEndOf="@+id/txtDiscountPrice"
+                    app:layout_constraintStart_toStartOf="@+id/txtDiscountPrice"
+                    app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
+                <TextView
+                    android:id="@+id/textView37"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="Cash Mode:"
+                    android:textColor="@color/black_ligh"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTotalPriceDiscount" />
+
+                <EditText
+                    android:id="@+id/txtDeliveryMode"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edit_field"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center|start"
+                    android:paddingStart="12dp"
+                    android:paddingLeft="12dp"
+                    android:text="Cash on Delivery"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/txtDiscountPrice"
+                    app:layout_constraintStart_toStartOf="@+id/txtDiscountPrice"
+                    app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

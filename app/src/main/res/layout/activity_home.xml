@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="onMenuClick"
+            type="com.infotech4it.cibo.activities.HomeActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_nav"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/dashboard_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/user_icon"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="Home"
+                android:textColor="@color/unSelectedTextColor"
+                android:textSize="12sp"
+                android:onClick="@{(view)->onMenuClick.onClick(view)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/profile_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/divider_one"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/profile_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/profile_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/profile_btn" />
+
+            <TextView
+                android:id="@+id/profile_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/user_icon"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="Profile"
+                android:textColor="@color/unSelectedTextColor"
+                android:textSize="12sp"
+                android:onClick="@{(view)->onMenuClick.onClick(view)}"
+                app:layout_constraintBottom_toBottomOf="@+id/dashboard_btn"
+                app:layout_constraintEnd_toStartOf="@+id/notification_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/dashboard_btn"
+                app:layout_constraintTop_toTopOf="@+id/dashboard_btn" />
+
+            <View
+                android:id="@+id/divider_two"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/notification_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/notification_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/notification_btn" />
+
+            <TextView
+                android:id="@+id/notification_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/user_icon"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="Notification"
+                android:textColor="@color/unSelectedTextColor"
+                android:textSize="12sp"
+                android:onClick="@{(view)->onMenuClick.onClick(view)}"
+                app:layout_constraintBottom_toBottomOf="@+id/profile_btn"
+                app:layout_constraintEnd_toStartOf="@+id/more_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/profile_btn"
+                app:layout_constraintTop_toTopOf="@+id/profile_btn" />
+
+            <View
+                android:id="@+id/divider_three"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/more_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/more_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/more_btn" />
+
+            <TextView
+                android:id="@+id/more_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/user_icon"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="More"
+                android:textColor="@color/unSelectedTextColor"
+                android:textSize="12sp"
+                android:onClick="@{(view)->onMenuClick.onClick(view)}"
+                app:layout_constraintBottom_toBottomOf="@+id/notification_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/notification_btn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
